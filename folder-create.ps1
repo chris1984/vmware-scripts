@@ -35,3 +35,6 @@ Remove-PSDrive -Name DS -Confirm:$false
 
 # Let user know script is finished
 Write-Host "Script finished, please verify in vCenter that the directory is present"
+
+# Disconnect from vCenter server
+Disconnect-VIServer -Confirm:$false
