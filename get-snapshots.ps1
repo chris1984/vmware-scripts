@@ -19,5 +19,4 @@ Connect-VIServer -Server <vcenterfqdn> -User <adminuser> -Password <adminpasswor
 Get-VM | Get-Snapshot | Select VM,Created,Name,SizeMB | FT
 
 #Now we get a list of VMs, with descriptions, size and the date created. Get all VMs where the snapshots are older than 7 days.
-
 Get-VM | Get-Snapshot | Where {$_.Created -lt (Get-Date).AddDays(-7)} | Select-Object VM, Name, Created, SizeMB
