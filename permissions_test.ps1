@@ -90,21 +90,21 @@ function Get-FolderPath {
 	[switch]$ShowHidden = $false
 	)
 
-	begin{
+	begin {
 		$excludedNames = "Datacenters","vm","host"
 	}
 
-	process{
-		$Folder | ForEach-Object{
+	process {
+		$Folder | ForEach-Object {
 			$fld = $_.Extensiondata
 			$fldType = "yellow"
-			if($fld.ChildType -contains "VirtualMachine"){
+			if($fld.ChildType -contains "VirtualMachine") {
 				$fldType = "blue"
 			}
 			$path = $fld.Name
-			while($fld.Parent){
+			while($fld.Parent) {
 				$fld = Get-View $fld.Parent
-				if((!$ShowHidden -and $excludedNames -notcontains $fld.Name) -or $ShowHidden){
+				if((!$ShowHidden -and $excludedNames -notcontains $fld.Name) -or $ShowHidden) {
 					$path = $fld.Name + "\" + $path
 				}
 			}
