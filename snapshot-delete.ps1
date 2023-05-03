@@ -24,7 +24,7 @@ $cluster = "your_cluster_name"
 $days_to_look = -90
 
 # We query the cluster and get all snapshots by the date set on line 24
-$snapshots_to_be_deleted = Get-cluster $cluster | Get-VM | get-snapshot | Where { $_.Created -lt (Get-Date).AddDays($days_to_look)}
+Get-cluster $cluster | Get-VM | get-snapshot | Where { $_.Created -lt (Get-Date).AddDays($days_to_look)} | Select VM,Name
 
 # We remove the snapshots forcefully (without any confirmation) DANGER!!!!!
 remove-snapshot -snapshot $snapshots_to_be_deleted -confirm:$false
