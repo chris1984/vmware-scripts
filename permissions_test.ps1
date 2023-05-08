@@ -81,6 +81,8 @@ function Get-Datastores {
     }
 }
 # Function to get full paths of folders in vSphere environment.
+# The yellow folders exist in the Hosts & Clusters view.
+# The blue folders exist in the Virtual Machines & Templates view.
 function Get-FolderPath {
 	param(
 	[parameter(valuefrompipeline = $true,
