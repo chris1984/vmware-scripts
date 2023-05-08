@@ -6,7 +6,7 @@
     Replace Line# 18 with your vCenter URL and username/password you are going to authenticate with
 .NOTES
     File Name      : find-orphans.ps1
-    Author         : Chris Roberts chrobert@redhat.com and others among the interwebs
+    Author         : Chris Roberts chrobert@redhat.com and https://www.altaro.com/vmware/find-orphaned-vsphere-vms-using-powercli/
     Prerequisite   : PowerShell V2
 .LINK
     Script posted at:
